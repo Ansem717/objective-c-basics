@@ -81,6 +81,7 @@
 		E9CAEAD41C8F76CC004543FE /* TuesdayHomework */ = {
 			isa = PBXGroup;
 			children = (
+				E9CAEB001C8F7844004543FE /* Model */,
 				E9CAEAFC1C8F7727004543FE /* App Global */,
 				E9CAEAFB1C8F7722004543FE /* Controller */,
 				E9CAEAFA1C8F770F004543FE /* View */,
@@ -133,6 +134,13 @@
 				E9CAEAE61C8F76CC004543FE /* Info.plist */,
 			);
 			name = "App Global";
+			sourceTree = "<group>";
+		};
+		E9CAEB001C8F7844004543FE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
