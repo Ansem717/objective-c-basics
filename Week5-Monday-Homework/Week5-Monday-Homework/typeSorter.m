@@ -13,7 +13,7 @@
 + (void)determineAndDoAction:(id)myInput {
     if ([myInput isKindOfClass:[NSNumber class]]) {
         
-        NSLog(@"%f", sqrt([myInput doubleValue]));
+        NSLog(@"%f\n\n", sqrt([myInput doubleValue]));
         
     } else if ([myInput isKindOfClass:[NSString class]]) {
         
@@ -24,12 +24,27 @@
             [revStr appendFormat:@"%c", charAtIndex];
         }
         NSLog(@"Original: %@", myInput);
-        NSLog(@"Reversed: %@", revStr);
+        NSLog(@"Reversed: %@ \n\n", revStr);
         
     } else if ([myInput isKindOfClass:[NSArray class]]) {
-        //Enumerate the number of types within the array... Interesting.
+        
+        int numOfStrings = 0;
+        int numOfInts = 0;
+        
+        for (id element in myInput) {
+            if ([element isKindOfClass:[NSString class]]) {
+                numOfStrings++;
+            } else if ([element isKindOfClass:[NSNumber class]]) {
+                numOfInts++;
+            }
+        }
+        
+        NSLog(@"The array has %d strings and %d intergers.\n\n", numOfStrings, numOfInts);
+        
+        //I couldn't figure out how to perform this for every single type without being a huge list of If-Else statements... so for now, I'm only checking if it is an Int or String.
+        
     } else {
-        NSLog(@"I'm not sure what to do with this type...");
+        NSLog(@"I'm not sure what to do with this type...\n\n");
     }
 }
 
