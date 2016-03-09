@@ -1,6 +1,6 @@
 //
 //  Contact.h
-//  classUserDefaults
+//  TuesdayHomework
 //
 //  Created by Andy Malik on 3/8/16.
 //  Copyright © 2016 AndyMalik. All rights reserved.
@@ -13,12 +13,15 @@
     NSString * _email;
 }
 
+#pragma mark - Custom Init
+- (instancetype)initWithName:(NSString *)name andEmail:(NSString *)email;
+
+#pragma mark - Setters
 - (void)setName:(NSString *)name;
 - (void)setEmail:(NSString *)email;
 
+#pragma mark - Getters
 - (NSString *)name;
 - (NSString *)email;
-
-- (instancetype)initWithName:(NSString *)name andEmail:(NSString *)email;
 
 @end

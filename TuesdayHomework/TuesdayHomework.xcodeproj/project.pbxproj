@@ -9,11 +9,13 @@
 /* Begin PBXBuildFile section */
 		E9CAEAD71C8F76CC004543FE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E9CAEAD61C8F76CC004543FE /* main.m */; };
 		E9CAEADA1C8F76CC004543FE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E9CAEAD91C8F76CC004543FE /* AppDelegate.m */; };
-		E9CAEADD1C8F76CC004543FE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9CAEADC1C8F76CC004543FE /* ViewController.m */; };
+		E9CAEADD1C8F76CC004543FE /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9CAEADC1C8F76CC004543FE /* HomeViewController.m */; };
 		E9CAEAE01C8F76CC004543FE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9CAEADE1C8F76CC004543FE /* Main.storyboard */; };
 		E9CAEAE21C8F76CC004543FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9CAEAE11C8F76CC004543FE /* Assets.xcassets */; };
 		E9CAEAE51C8F76CC004543FE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9CAEAE31C8F76CC004543FE /* LaunchScreen.storyboard */; };
 		E9CAEAF01C8F76CC004543FE /* TuesdayHomeworkTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E9CAEAEF1C8F76CC004543FE /* TuesdayHomeworkTests.m */; };
+		E9CAEB031C8F7986004543FE /* Contact.m in Sources */ = {isa = PBXBuildFile; fileRef = E9CAEB021C8F7986004543FE /* Contact.m */; };
+		E9CAEB061C8F8933004543FE /* AddressBook.m in Sources */ = {isa = PBXBuildFile; fileRef = E9CAEB051C8F8933004543FE /* AddressBook.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,8 +33,8 @@
 		E9CAEAD61C8F76CC004543FE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E9CAEAD81C8F76CC004543FE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E9CAEAD91C8F76CC004543FE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		E9CAEADB1C8F76CC004543FE /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		E9CAEADC1C8F76CC004543FE /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		E9CAEADB1C8F76CC004543FE /* HomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		E9CAEADC1C8F76CC004543FE /* HomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		E9CAEADF1C8F76CC004543FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E9CAEAE11C8F76CC004543FE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E9CAEAE41C8F76CC004543FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -40,6 +42,10 @@
 		E9CAEAEB1C8F76CC004543FE /* TuesdayHomeworkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TuesdayHomeworkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9CAEAEF1C8F76CC004543FE /* TuesdayHomeworkTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TuesdayHomeworkTests.m; sourceTree = "<group>"; };
 		E9CAEAF11C8F76CC004543FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E9CAEB011C8F7986004543FE /* Contact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Contact.h; sourceTree = "<group>"; };
+		E9CAEB021C8F7986004543FE /* Contact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Contact.m; sourceTree = "<group>"; };
+		E9CAEB041C8F8933004543FE /* AddressBook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddressBook.h; sourceTree = "<group>"; };
+		E9CAEB051C8F8933004543FE /* AddressBook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddressBook.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,8 +126,8 @@
 		E9CAEAFB1C8F7722004543FE /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				E9CAEADB1C8F76CC004543FE /* ViewController.h */,
-				E9CAEADC1C8F76CC004543FE /* ViewController.m */,
+				E9CAEADB1C8F76CC004543FE /* HomeViewController.h */,
+				E9CAEADC1C8F76CC004543FE /* HomeViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -139,6 +145,10 @@
 		E9CAEB001C8F7844004543FE /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				E9CAEB011C8F7986004543FE /* Contact.h */,
+				E9CAEB021C8F7986004543FE /* Contact.m */,
+				E9CAEB041C8F8933004543FE /* AddressBook.h */,
+				E9CAEB051C8F8933004543FE /* AddressBook.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -243,7 +253,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E9CAEADD1C8F76CC004543FE /* ViewController.m in Sources */,
+				E9CAEB031C8F7986004543FE /* Contact.m in Sources */,
+				E9CAEADD1C8F76CC004543FE /* HomeViewController.m in Sources */,
+				E9CAEB061C8F8933004543FE /* AddressBook.m in Sources */,
 				E9CAEADA1C8F76CC004543FE /* AppDelegate.m in Sources */,
 				E9CAEAD71C8F76CC004543FE /* main.m in Sources */,
 			);

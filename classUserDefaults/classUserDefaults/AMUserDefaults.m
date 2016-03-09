@@ -55,7 +55,6 @@
 }
 
 - (NSMutableDictionary *)setupPreferences {
-    
     NSError * error;
     NSData *jsonData = [NSData dataWithContentsOfURL:[self preferenceURL]];
     
@@ -75,6 +74,9 @@
 }
 
 - (NSURL *)preferenceURL {
+    
+    NSLog(@"%@", [[self documentsDirectory]URLByAppendingPathComponent:@"preferences.json"]);
+    
     return [[self documentsDirectory]URLByAppendingPathComponent:@"preferences.json"];
 }
 
