@@ -9,6 +9,8 @@
 #import "ViewController.h"
 #import "Student.h"
 #import "StudentStorage.h"
+#import "CloudBackup.h"
+@import CloudKit;
 
 @interface ViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -20,12 +22,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    Student *randomStudent = [[Student alloc] initWithFirstName:@"Andy" andLastName:@"Malik" andEmail:@"me@andymalik.com" andPhoneNumber:@"206.304.6909"];
-    
-    [[StudentStorage shared]add:randomStudent];
-    
-    NSLog(@"%@", [[StudentStorage shared]allStudents]);
 }
 
 - (void)didReceiveMemoryWarning {
@@ -48,10 +44,20 @@
     
     Student *student = [[StudentStorage shared]studentForIndexPath:indexPath];
     
-    studentCell.textLabel.text = student.firstName;
+    studentCell.textLabel.text = [NSString stringWithFormat:@"%@ %@", student.firstName, student.lastName];
     studentCell.detailTextLabel.text = [NSString stringWithFormat:@"Phone: %@", student.phoneNumber];
     
     return studentCell;
+}
+
+#pragma mark - Cloudkit Update
+- (void)updateStudents {
+    __weak typeof(self) weakSelf = self;
+    
+    [[CloudBackup shared]enqueueOperation:^(BOOL success, NSArray *students) {
+        [[StudentStorage shared]addStudentsFromCloudKit:students];
+        [weakSelf.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationFade];
+    }];
 }
 
 

@@ -68,10 +68,25 @@
     self.student.lastName = self.lastNameInputArea.text;
     self.student.email = self.emailInputArea.text;
     self.student.phoneNumber = self.emailInputArea.text;
+
+    for (Student *eachStudent in [[StudentStorage shared]allStudents]) {
+        if ([eachStudent.email isEqualToString:self.student.email]) {
+            NSString *title = @"That e-mail already exists.";
+            NSString *message = @"Please use a different e-mail.";
+            
+            UIAlertController *controller = [UIAlertController alertControllerWithTitle:title message:message preferredStyle: UIAlertControllerStyleAlert];
+            
+            [controller addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil]];
+            
+            [self presentViewController:controller animated:YES completion:nil];
+            return;
+        }
+    }
     
     if (self.student.isValidStudent) {
-        [[StudentStorage shared]add:self.student];
-        [self.navigationController popViewControllerAnimated:YES];
+        [[StudentStorage shared]add:self.student completion:^{
+            [self.navigationController popViewControllerAnimated:YES];
+        }];
     }
     
 }

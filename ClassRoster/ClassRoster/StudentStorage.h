@@ -18,10 +18,11 @@ typedef void(^StudentStoreCompletion)();
 - (NSArray *)allStudents;
 - (NSInteger)count;
 - (Student *)studentForIndexPath:(NSIndexPath *)index;
-
-- (void)add:(Student *)student;
-- (void)remove:(Student *)student;
-- (void)removeStudentAtIndex:(NSIndexPath *)index;
+;
+- (void)addStudentsFromCloudKit:(NSArray *)students;
+- (void)add:(Student *)student completion:(StudentStoreCompletion)completion;
+- (void)remove:(Student *)student completion:(StudentStoreCompletion)completion;
+- (void)removeStudentAtIndex:(NSIndexPath *)index completion:(StudentStoreCompletion)completion;
 - (void)save;
 
 @end

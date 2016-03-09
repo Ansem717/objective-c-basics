@@ -8,8 +8,11 @@
 
 #import "Student.h"
 
+typedef void(^StudentCompletion)(NSArray *students);
+
 @interface Student (Additions)
 
 - (BOOL)isValidStudent;
++ (void)studentsFromRecords:(NSArray *)records completion:(StudentCompletion)completion;
 
 @end

@@ -8,6 +8,8 @@
 
 #import "StudentStorage.h"
 #import "NSURL+Additions.h"
+#import "CloudBackup.h"
+#import "Student.h"
 
 @interface StudentStorage ()
 
@@ -50,6 +52,32 @@
 
 #pragma mark - Array Methods
 
+- (void)addStudentsFromCloudKit:(NSArray *)students {
+    if (self.students.count == 0) {
+        self.students = [[NSMutableArray alloc]initWithArray:students];
+    } else {
+        for (Student *cloudStudent in students) {
+            
+            NSString *cloudEmail = cloudStudent.email;
+            BOOL found = NO;
+            
+            for (Student *localStudent in students) {
+                
+                NSString *localEmail = localStudent.email;
+                
+                if ([localEmail isEqualToString:cloudEmail]) {
+                    found = YES; break;
+                }
+            }
+            
+            if (!found) {
+                [self.students addObject:cloudStudent];
+            }
+        }
+    }
+    
+}
+
 - (NSArray *)allStudents {
     return self.students;
 }
@@ -62,22 +90,35 @@
     return [self.students objectAtIndex:index.row];
 }
 
-- (void)add:(Student *)student {
-    [self.students addObject:student];
-    [self save];
-}
-
-- (void)remove:(Student *)student {
-    [self.students removeObject:student];
-    [self save];
-    
-}
-
-- (void)removeStudentAtIndex:(NSIndexPath *)index {
-    if (index.row < self.students.count) {
-        [self.students removeObjectAtIndex:index.row];
-        [self save];
+- (void)add:(Student *)student completion:(StudentStoreCompletion)completion {
+    if (![self.students containsObject:student]) {
+        [[CloudBackup shared]enqueueOperation:CloudOperationSave student:student completion:^(BOOL success, NSArray *students) {
+            if (success) {
+                [self.students addObject:students.firstObject];
+                [self save];
+                
+                completion();
+            }
+        }];
     }
+}
+
+- (void)remove:(Student *)student completion:(StudentStoreCompletion)completion {
+    if ([self.students containsObject:student]) {
+        
+        [[CloudBackup shared]enqueueOperation:CloudOperationDelete student:student completion:^(BOOL success, NSArray *students) {
+            if (success) {
+                [self.students removeObject:student];
+                [self save];
+                
+                completion();
+            }
+        }];
+    }
+}
+
+- (void)removeStudentAtIndex:(NSIndexPath *)index completion:(StudentStoreCompletion)completion {
+    [self remove:[self studentForIndexPath:index] completion:completion];
 }
 
 - (void)save {
