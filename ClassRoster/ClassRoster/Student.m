@@ -8,6 +8,13 @@
 
 #import "Student.h"
 
+#pragma mark - EXTENSION
+@interface Student () <NSCoding>
+
+@end
+
+
+#pragma mark - Implementation
 @implementation Student
 
 #pragma mark - Initializers
@@ -70,5 +77,54 @@
     return _phoneNumber;
 }
 
+#pragma mark - Override
+- (NSString *)description {
+    return [NSString stringWithFormat:@"PRINTING STUDENT...\n\nFirst and Last Name: %@ %@\nE-mail: %@\nPhone Number: %@", self.firstName, self.lastName, self.email, self.phoneNumber];
+}
+
+#pragma mark - NSCoding
+
+- (instancetype)initWithCoder:(NSCoder *)aDecoder {
+    NSString *firstName = [aDecoder decodeObjectForKey:NSStringFromSelector(@selector(firstName))];
+    NSString *lastName = [aDecoder decodeObjectForKey:NSStringFromSelector(@selector(lastName))];
+    NSString *email = [aDecoder decodeObjectForKey:NSStringFromSelector(@selector(email))];
+    NSString *phoneNumber = [aDecoder decodeObjectForKey:NSStringFromSelector(@selector(phoneNumber))];
+
+    return [self initWithFirstName:firstName
+                       andLastName:lastName
+                          andEmail:email
+                    andPhoneNumber:phoneNumber];
+}
+
+- (void)encodeWithCoder:(NSCoder *)aCoder {
+    [aCoder encodeObject:self.firstName forKey:NSStringFromSelector(@selector(firstName))];
+    [aCoder encodeObject:self.lastName forKey:NSStringFromSelector(@selector(lastName))];
+    [aCoder encodeObject:self.email forKey:NSStringFromSelector(@selector(email))];
+    [aCoder encodeObject:self.phoneNumber forKey:NSStringFromSelector(@selector(phoneNumber))];
+}
 
 @end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
