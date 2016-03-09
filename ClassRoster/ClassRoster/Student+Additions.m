@@ -19,7 +19,7 @@
 @implementation Student (Additions)
 
 - (BOOL)isValidStudent {
-    
+
     if (IS_FISTNAME_VALID > 0 && IS_LASTNAME_VALID && IS_EMAIL_VALID) {
         return YES;
     }
