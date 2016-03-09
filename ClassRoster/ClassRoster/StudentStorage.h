@@ -16,6 +16,9 @@ typedef void(^StudentStoreCompletion)();
 + (instancetype)shared;
 
 - (NSArray *)allStudents;
+- (NSInteger)count;
+- (Student *)studentForIndexPath:(NSIndexPath *)index;
+
 - (void)add:(Student *)student;
 - (void)remove:(Student *)student;
 - (void)removeStudentAtIndex:(NSIndexPath *)index;

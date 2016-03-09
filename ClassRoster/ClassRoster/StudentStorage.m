@@ -54,6 +54,14 @@
     return self.students;
 }
 
+- (NSInteger)count {
+    return self.students.count;
+}
+
+- (Student *)studentForIndexPath:(NSIndexPath *)index {
+    return [self.students objectAtIndex:index.row];
+}
+
 - (void)add:(Student *)student {
     [self.students addObject:student];
     [self save];
@@ -75,4 +83,5 @@
 - (void)save {
     [NSKeyedArchiver archiveRootObject:self.students toFile:[[NSURL archiveURL]path]];
 }
+
 @end

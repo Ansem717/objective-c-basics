@@ -17,6 +17,10 @@
 		E949E3CE1C9085E400ADC224 /* Student.m in Sources */ = {isa = PBXBuildFile; fileRef = E949E3CD1C9085E400ADC224 /* Student.m */; };
 		E976FBC41C90918100E1989F /* StudentStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = E976FBC31C90918100E1989F /* StudentStorage.m */; };
 		E976FBC71C90939600E1989F /* NSURL+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = E976FBC61C90939600E1989F /* NSURL+Additions.m */; };
+		E976FBCD1C909D1200E1989F /* AddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E976FBCC1C909D1200E1989F /* AddViewController.m */; };
+		E976FBD01C909FC800E1989F /* Student+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = E976FBCF1C909FC800E1989F /* Student+Additions.m */; };
+		E976FBD31C90A03000E1989F /* NSString+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = E976FBD21C90A03000E1989F /* NSString+Additions.m */; };
+		E976FBD61C90A4EF00E1989F /* CloudBackup.m in Sources */ = {isa = PBXBuildFile; fileRef = E976FBD51C90A4EF00E1989F /* CloudBackup.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +42,14 @@
 		E976FBC31C90918100E1989F /* StudentStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StudentStorage.m; sourceTree = "<group>"; };
 		E976FBC51C90939600E1989F /* NSURL+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+Additions.h"; sourceTree = "<group>"; };
 		E976FBC61C90939600E1989F /* NSURL+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+Additions.m"; sourceTree = "<group>"; };
+		E976FBCB1C909D1200E1989F /* AddViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddViewController.h; sourceTree = "<group>"; };
+		E976FBCC1C909D1200E1989F /* AddViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddViewController.m; sourceTree = "<group>"; };
+		E976FBCE1C909FC800E1989F /* Student+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Student+Additions.h"; sourceTree = "<group>"; };
+		E976FBCF1C909FC800E1989F /* Student+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Student+Additions.m"; sourceTree = "<group>"; };
+		E976FBD11C90A03000E1989F /* NSString+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Additions.h"; sourceTree = "<group>"; };
+		E976FBD21C90A03000E1989F /* NSString+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Additions.m"; sourceTree = "<group>"; };
+		E976FBD41C90A4EF00E1989F /* CloudBackup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CloudBackup.h; sourceTree = "<group>"; };
+		E976FBD51C90A4EF00E1989F /* CloudBackup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CloudBackup.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +110,8 @@
 				E949E3BF1C90852600ADC224 /* Info.plist */,
 				E976FBC51C90939600E1989F /* NSURL+Additions.h */,
 				E976FBC61C90939600E1989F /* NSURL+Additions.m */,
+				E976FBD11C90A03000E1989F /* NSString+Additions.h */,
+				E976FBD21C90A03000E1989F /* NSString+Additions.m */,
 			);
 			name = AppGlobal;
 			sourceTree = "<group>";
@@ -107,6 +121,8 @@
 			children = (
 				E949E3B41C90852500ADC224 /* ViewController.h */,
 				E949E3B51C90852500ADC224 /* ViewController.m */,
+				E976FBCB1C909D1200E1989F /* AddViewController.h */,
+				E976FBCC1C909D1200E1989F /* AddViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -126,8 +142,12 @@
 			children = (
 				E949E3CC1C9085E400ADC224 /* Student.h */,
 				E949E3CD1C9085E400ADC224 /* Student.m */,
+				E976FBCE1C909FC800E1989F /* Student+Additions.h */,
+				E976FBCF1C909FC800E1989F /* Student+Additions.m */,
 				E976FBC21C90918100E1989F /* StudentStorage.h */,
 				E976FBC31C90918100E1989F /* StudentStorage.m */,
+				E976FBD41C90A4EF00E1989F /* CloudBackup.h */,
+				E976FBD51C90A4EF00E1989F /* CloudBackup.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -210,10 +230,14 @@
 			files = (
 				E949E3B61C90852500ADC224 /* ViewController.m in Sources */,
 				E949E3B31C90852500ADC224 /* AppDelegate.m in Sources */,
+				E976FBD31C90A03000E1989F /* NSString+Additions.m in Sources */,
 				E976FBC71C90939600E1989F /* NSURL+Additions.m in Sources */,
+				E976FBCD1C909D1200E1989F /* AddViewController.m in Sources */,
 				E949E3B01C90852500ADC224 /* main.m in Sources */,
 				E949E3CE1C9085E400ADC224 /* Student.m in Sources */,
 				E976FBC41C90918100E1989F /* StudentStorage.m in Sources */,
+				E976FBD01C909FC800E1989F /* Student+Additions.m in Sources */,
+				E976FBD61C90A4EF00E1989F /* CloudBackup.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

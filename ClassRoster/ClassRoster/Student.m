@@ -79,7 +79,7 @@
 
 #pragma mark - Override
 - (NSString *)description {
-    return [NSString stringWithFormat:@"PRINTING STUDENT...\n\nFirst and Last Name: %@ %@\nE-mail: %@\nPhone Number: %@", self.firstName, self.lastName, self.email, self.phoneNumber];
+    return [NSString stringWithFormat:@"PRINTING STUDENT...\r\rFirst and Last Name: %@ %@\rE-mail: %@\rPhone Number: %@\r\r", self.firstName, self.lastName, self.email, self.phoneNumber];
 }
 
 #pragma mark - NSCoding
