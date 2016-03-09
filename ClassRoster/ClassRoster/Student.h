@@ -15,9 +15,22 @@
     NSString *_phoneNumber;
 }
 
+#pragma mark - Custom Init
+- (instancetype)initWithFirstName:(NSString *)firstName
+                      andLastName:(NSString *)lastName
+                         andEmail:(NSString *)email
+                   andPhoneNumber:(NSString *)phoneNumber;
 
+#pragma mark - Setters
+- (void)setFirstName:(NSString *)firstName;
+- (void)setLastName:(NSString *)lastName;
+- (void)setEmail:(NSString *)email;
+- (void)setPhoneNumber:(NSString *)phoneNumber;
 
-
-
+#pragma mark - Getters
+- (NSString *)firstName;
+- (NSString *)lastName;
+- (NSString *)email;
+- (NSString *)phoneNumber;
 
 @end
