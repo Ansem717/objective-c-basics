@@ -15,7 +15,7 @@ NSNumber can be used to create objects from these types.
 
 If you store a number inside NSNumber though, make sure to recieve it with the same type (Like Int <-> Int, or Double <-> Double)
 
-use <#isEqualToNumber#> method to compare if two numbers are equal and the <#compare:#> to compare higher, lower, or equal.
+use <#isEqualToNumber#> method to compare if two numbers are equal and <#compare:#> to compare higher, lower, or equal.
 
 
 Using <#@2#> defines a numerical litteral. This is the same as <#[NSNumber alloc] initWith... 2]#> where the initWith is int, double, or long based on what the numerical value was.
@@ -32,12 +32,12 @@ Sometimes immutable values are still mutable in Objective C. To avoid this, once
 <#NSString *string;#>
 <#string = @"Hello";#>
 <#string = @"World";#>
-<#NSLog the string#>
+<#NSLog(@"%@", string)#>
 
 Result: "World"
 
 Even though <#string#> is a constant, what's going on here is that a new string <#@"World";#> is replacing whatever the original <#string#> constant was pointing at. 
-Let constants are not always immutable. Be careful!
+Let constants in Objective-C are not always immutable. Be careful!
 
 Objective-C arrays are naturally [AnyObject], but only an Object. It cannot contain basic data types.
 
